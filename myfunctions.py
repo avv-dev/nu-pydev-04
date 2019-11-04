@@ -12,7 +12,7 @@ def simple_separator():
     Функция создает красивый резделитель из 10-и звездочек (**********)
     :return: **********
     """
-    pass
+    return '**********'
 
 
 print(simple_separator() == '**********')  # True
@@ -24,21 +24,21 @@ def long_separator(count):
     :param count: количество звездочек
     :return: строка разделитель, примеры использования ниже
     """
-    pass
+    return '*' * count
 
 
 print(long_separator(3) == '***')  # True
 print(long_separator(4) == '****')  # True
 
 
-def separator(simbol, count):
+def separator(symbol, count):
     """
     Функция создает разделитель из любых символов любого количества
-    :param simbol: символ разделителя
+    :param symbol: символ разделителя
     :param count: количество повторений
     :return: строка разделитель примеры использования ниже
     """
-    pass
+    return symbol * count
 
 
 print(separator('-', 10) == '----------')  # True
@@ -55,7 +55,7 @@ def hello_world():
     ##########
     :return: None
     """
-    pass
+    print(f"{simple_separator()}\n\nHello World!\n\n{separator('#', 10)}")
 
 
 '''
@@ -79,7 +79,7 @@ def hello_who(who='World'):
     :param who: кого мы приветствуем, по умолчанию World
     :return: None
     """
-    pass
+    print(f"{simple_separator()}\n\nHello {who}!\n\n{separator('#', 10)}")
 
 
 '''
@@ -115,7 +115,7 @@ def pow_many(power, *args):
     :param args: любое количество цифр
     :return: результат вычисления # True -> (1 + 2)**1
     """
-    pass
+    return sum(args) ** power
 
 
 print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
@@ -133,7 +133,9 @@ def print_key_val(**kwargs):
     :param kwargs: любое количество именованных параметров
     :return: None
     """
-    pass
+    for arg in kwargs.keys():
+        print(f'{arg} --> {kwargs[arg]}')
+
 
 
 """
@@ -158,7 +160,9 @@ def my_filter(iterable, function):
     :param function: функция фильтрации
     :return: новая отфильтрованная последовательность
     """
-    pass
+    filtered_values = []
+    [ filtered_values.append ( elem ) for elem in iterable if function ( elem ) ]
+    return filtered_values
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
